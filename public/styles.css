@@ -1,0 +1,135 @@
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set a background color for the whole page */
+  body {
+    background-color: #914141;
+    /* font-family: Arial, Helvetica, sans-serif; */
+  }
+  
+  /* Style the content container */
+  #content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(151, 27, 27);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   /* display: flex; */
+  }
+  
+  /* Style the input and button */
+  #input {
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 85%;
+    margin-right: 15px;
+    margin-top: 15px;
+    font-size: 15px;
+
+  }
+
+  #subtmitButton {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 0%;
+  }
+  
+  #subtmitButton:hover {
+    background-color: #090a0d;
+  }
+  
+  /* Style the messages container */
+  #messages {
+    margin-top: 10px;
+    list-style-type: none;
+    padding: 0;
+  
+    border-radius: 10px;
+  }
+  
+  /* Style the individual messages */
+  
+
+
+  /* Set the background image and adjust its position */
+body {
+    background-image: url("https://www.w3schools.com/w3images/pizza.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* Style the main heading */
+  .heading {
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    /* background-color: #0f2810; */
+  }
+  
+  h1 {
+    font-size: 5rem;
+    text-shadow: #e5dfdf;
+    box-shadow: #090a0d;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Style the restaurant name */
+  .name {
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+    border-radius: 90px;
+    background-color: #ec4c24;
+  }
+  .heading{
+    border-radius: 90px;
+    background-color: #e82b2b;
+  }
+  
+  h2 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Style the chat link */
+  a {
+    display: block;
+    width: 150px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  a:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  li {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  
+  
