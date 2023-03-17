@@ -1,5 +1,13 @@
-const session = require("express-session");
+var session = require("express-session");
+const MongoStore = require('connect-mongo')
+require('dotenv').config()
+
 const { sessionConfig } = require("./../config");
+
+sessionConfig.store = MongoStore.create({
+  mongoUrl: process.env.MONGO_URL,
+  dbName: 'test-app'
+}) 
 
 const sessionMiddleware = session(sessionConfig);
 

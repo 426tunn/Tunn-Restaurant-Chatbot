@@ -78,7 +78,7 @@ class ChatBot {
     showChatOptions() {
         this.sendMessage({message: "Please make a choice:"});
         for (let [code, action] of Object.entries(this.chatOptions)) {
-            this.sendMessage({message: `Select ${code} to ${action}`});
+            this.sendMessage({message: `Select ${code} for ${action}`});
         }
     }
 
@@ -93,6 +93,7 @@ class ChatBot {
         const text = document.createElement('li');
         if (user) {
         //     text.style.backgroundColor = "#4390f4";
+        text.className = 'textbox'
         text.style.textAlign = 'right';
         text.style.color = 'black';
         } else if (error) {
@@ -118,7 +119,7 @@ class ChatBot {
         }
 
         if (!input.trim()) return
-        if (isNaN(input)) return this.sendMessage({message: "Please make a choice", error: true})
+        if (isNaN(input)) return this.sendMessage({message: "PLEASE MAKE A CHOICE", error: true})
         return true;
     }
 
@@ -162,7 +163,7 @@ class ChatBot {
     getCurrentOrder() {
         const currentOrder = this.customer.currentOrder;
         if (!currentOrder) {
-            return this.sendMessage({message: "You have no current order 😬"});
+            return this.sendMessage({message: "You have no current order"});
         }
 
         this.sendMessage({message: "Here's what you have in your order:"});
@@ -175,13 +176,13 @@ class ChatBot {
     getOrderHistory() {
         const orderHistory = this.customer.orderHistory;
         if (orderHistory.length > 0) {
-            this.sendMessage({message: "Here's it is:"})
+            this.sendMessage({message: "Here it is:"})
             for (let i = 0; i < orderHistory.length; i++) {
                 const order = orderHistory[i];
                 this.sendMessage({message: `${i+1}: "${order.state}" containing ${order.getItemNames()} with a total of $${order.getTotal()}`})
             }
         } else {
-            this.sendMessage({message: "Nothing in your history yet 🤔"})
+            this.sendMessage({message: "Nothing in your history yet "})
         }
     }
 

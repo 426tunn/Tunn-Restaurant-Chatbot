@@ -16,7 +16,7 @@ class Customer {
         }
     }
 
-    static createFromSession(customerObject) {
+    static  createFromSession(customerObject) {
         const customer =  new this(customerObject.name);
         const currentOrder = customerObject.currentOrder;
         const orderHistory = customerObject.orderHistory;
