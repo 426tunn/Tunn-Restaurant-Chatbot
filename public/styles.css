@@ -10,15 +10,29 @@
     /* font-family: Arial, Helvetica, sans-serif; */
   }
   
+  .mheader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* background-color: #066109; */
+    padding: 2px;
+    margin-top: 0px;
+    background-color: rgb(151, 27, 27);
+  }
+
+
   /* Style the content container */
   #content {
+    margin-top: 120px;
+    margin-left: 25%;
     max-width: 600px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 20px;
     background-color: rgb(151, 27, 27);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-   /* display: flex; */
+   
   }
   
   /* Style the input and button */
@@ -36,12 +50,12 @@
 
   #subtmitButton {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     border: none;
     background-color: #4CAF50;
     color: #fff;
     cursor: pointer;
-    margin-left: 0%;
+    margin-top: 15px;
   }
   
   #subtmitButton:hover {
@@ -50,11 +64,11 @@
   
   /* Style the messages container */
   #messages {
-    margin-top: 10px;
+    margin-top: 50px;
     list-style-type: none;
     padding: 0;
   
-    border-radius: 10px;
+    border: none;
   }
   
   /* Style the individual messages */
@@ -67,6 +81,19 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+  }
+
+
+
+
+  form {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
   }
   
   /* Style the main heading */
@@ -77,6 +104,8 @@ body {
     margin-right: 200px;
     /* background-color: #0f2810; */
   }
+
+
   
   h1 {
     font-size: 5rem;
@@ -137,4 +166,14 @@ body {
     padding: 10px;
     border-radius: 5px;
   }
+
+  .textbox {
+    background-color: #333;
+   padding: 10px;
+   margin-left: 80%;
+   align-self: center;
+   border-radius: 15px;
+  }
+  
+
   

@@ -20,6 +20,7 @@ class ChatBot {
     }
     constructor(socket, user, messages, customerInput, subtmitButton) {
         this.socket = socket;
+        
         this.state = this.states[0];
         this.customer = user;
         this.messages = messages;
@@ -30,16 +31,19 @@ class ChatBot {
 
         this.chatOptions = this.commands;
         this.validOptions = null;
-
+       //welcomes customer and send chatoptions
         this.DisplayMessage(`Welcome ${this.customer.name}`);
         this.showChatOptions();
 
         subtmitButton.addEventListener('click', (e) => {
            e.preventDefault();
+
+           //validates customer input
            const customerInput = this.getcustomerInput();
            if (!this.validate(customerInput)) return;
             this.clearcustomerInput();
-           // if we're waiting for user to pick an option
+
+        //    if we're waiting for user to pick an option
            if (this.state === this.states[0]) {
                this.sendMessage({message: customerInput, user: true })
                this.processInput(parseInt(customerInput));
@@ -76,12 +80,12 @@ class ChatBot {
     }
 
     showChatOptions() {
-        this.sendMessage({message: "Please make a choice:"});
+        this.sendMessage({message: "PLEASE MAKE A CHOICE:"});
         for (let [code, action] of Object.entries(this.chatOptions)) {
             this.sendMessage({message: `Select ${code} for ${action}`});
         }
     }
-
+   //when order is canceled or placed this resets variables
     resetVariables() {
         this.chatOptions = this.commands;
         this.state = this.states[0]
@@ -92,9 +96,8 @@ class ChatBot {
     sendMessage({message, user, error}) {
         const text = document.createElement('li');
         if (user) {
-        //     text.style.backgroundColor = "#4390f4";
-        text.className = 'textbox'
-        text.style.textAlign = 'right';
+        text.className = 'textbox';
+        text.style.textAlign = 'center';
         text.style.color = 'black';
         } else if (error) {
             text.style.backgroundColor = "#ff1515";
@@ -119,7 +122,7 @@ class ChatBot {
         }
 
         if (!input.trim()) return
-        if (isNaN(input)) return this.sendMessage({message: "PLEASE MAKE A CHOICE", error: true})
+        if (isNaN(input)) return this.sendMessage({message: "Please type number", error: true})
         return true;
     }
 
@@ -163,14 +166,18 @@ class ChatBot {
     getCurrentOrder() {
         const currentOrder = this.customer.currentOrder;
         if (!currentOrder) {
-            return this.sendMessage({message: "You have no current order"});
+            return this.sendMessage({message: "YOU HAVE NO CURRENT ORDER"});
         }
 
-        this.sendMessage({message: "Here's what you have in your order:"});
+        this.sendMessage({message: "HERE'S WHAT YOU HAVE IN YOUR ORDER:"});
         currentOrder.orderItems.forEach(orderItem => {
             this.sendMessage({message: `${orderItem.name} worth of $${orderItem.totalPrice} `})
         })
-        this.sendMessage({message: `The total is: $${currentOrder.getTotal()}`})
+        this.sendMessage({message: `THE TOTAL IS: $${currentOrder.getTotal()}`});
+
+        setTimeout(() => {
+            this.showChatOptions()
+        }, 2000)
     }
 
     getOrderHistory() {
@@ -184,6 +191,9 @@ class ChatBot {
         } else {
             this.sendMessage({message: "Nothing in your history yet "})
         }
+        setTimeout(() => {
+            this.showChatOptions()
+        }, 2000)
     }
 
     checkoutOrder() {
@@ -198,6 +208,9 @@ class ChatBot {
             this.resetVariables();
             this.updateCustSession();
         }
+        setTimeout(() => {
+            this.showChatOptions()
+        }, 2000)
     }
 
     cancelOrOrder() {
@@ -211,7 +224,10 @@ class ChatBot {
         } else {
             this.sendMessage({message: "You do not have a current order"});
         }
+        setTimeout(() => {
+            this.showChatOptions()
+        }, 2000)
     }
 }
 
-export default ChatBot ;
+export default ChatBot
