@@ -193,7 +193,8 @@ class ChatBot {
         }
         setTimeout(() => {
             this.showChatOptions()
-        }, 3000)
+
+        }, 2000)
     }
 
     checkoutOrder() {
