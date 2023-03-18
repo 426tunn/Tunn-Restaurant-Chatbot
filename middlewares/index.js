@@ -1,4 +1,4 @@
-const session = require("express-session");
+var session = require("express-session");
 const MongoStore = require('connect-mongo')
 require('dotenv').config()
 

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let chatBot;
     let customer;
 
-    socket.emit("customer:get"); //gets existing customer session
+    socket.emit("customer:get"); //gets existing customer
 
     socket.on("customer:create", () => {
       //creating session for new user
@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
       chatBot.updateCustSession();
     });
 
-    socket.on("customer:post", custSession => {
-        const customerObj = custSession.customer;
+    socket.on("customer:post", customerSession => {
+        const customerObj = customerSession.customer;
         customer = Customer.createFromSession(customerObj)
         chatBot = new ChatBot(socket, customer, messagesContainer, customerInputBox, subtmitButton);
     })
