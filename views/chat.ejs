@@ -8,27 +8,22 @@
         <title>Tunn Restaurant</title>
     </head>
     
-
-<body>
-    <header class="mheader">
-        <div class="header-title">
-          
-          <a href="/"><i class="fa-solid fa-arrow-left"></i> <p>Home</p></a>
-        </div>
-      </header>
-
-    <div id="content">
-        <ul id="messages">
-        </ul>
-        <form id="form" action="">
+    <body>
+        <div>
+            <header class="mheader">
+               <a href="/"><i class="fa-solid fa-arrow-left"></i> <p>Home</p></a>
+            </header>
+       </div>
+        <div id="content">
+          <ul id="messages">
+          </ul>
+         <form id="form" action="">
             <input placeholder="write something..." id="input" autocomplete="off" /><button id="subtmitButton">Send</button>
-        </form>
-    </div>
-</body>
-<script type="module" src="/socket.js"></script>
-<script src="/socket.io/socket.io.js"></script>
-
-<script type="module" src="/main.js"></script>
+         </form>
+        </div>
+    </body>
+  <script type="module" src="/socket.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
 
 </html>
 

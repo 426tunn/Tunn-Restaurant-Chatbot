@@ -1,5 +1,5 @@
 const getCustomer = function () {
-  socket = this
+   socket = this
   const custSession = socket.request.session.custSession;
   if (!custSession) {
     return socket.emit("customer:create");

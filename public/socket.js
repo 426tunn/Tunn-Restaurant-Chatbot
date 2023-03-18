@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let chatBot;
     let customer;
 
-    socket.emit("customer:get");
+    socket.emit("customer:get"); //gets existing customer
 
     socket.on("customer:create", () => {
       //creating session for new user
